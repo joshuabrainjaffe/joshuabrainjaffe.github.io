@@ -366,7 +366,6 @@ $(window).load(function() {
 			// PLAYER BUSTS
 			else if (playersValue > 21 && playerAces === 0) {
 				$('<h2>PLAYER BUSTS</h2>').appendTo('#statusSection');
-				$playerBank = $playerBank - $currentBet
 				$('#currentBet').html('<h2>Player lost: $ ' + $currentBet + '</h2>');
 				$currentBet = 0;
 			}
@@ -382,7 +381,6 @@ $(window).load(function() {
 			// DEALER WINS
 			else if ((dealersValue <= 21) && (dealersValue > playersValue)){
 				$('<h2>Dealer Wins</h2>').appendTo('#statusSection');
-				$playerBank = $playerBank - $currentBet
 				console.log($currentBet);
 				$('#currentBet').html('<h2>Player lost: $ ' + $currentBet + '</h2>');
 				$currentBet = 0;
