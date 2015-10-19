@@ -191,28 +191,34 @@ $(window).load(function() {
 				$('.bet').remove();
 				$currentBet = 10;
 				$('<article>').appendTo('#betting').html('<h2>Current Bet: $10</h2>').attr({id: 'currentBet', class: 'currentBet'});
+				$playerBank = ($playerBank - $currentBet);
+				$('#bank').html('<h3>Player Bank: $ ' + $playerBank + '</h3>');
 				hitOrStand();
 			});
 			var $bet25 = $('<button/>').appendTo('#betting').addClass('bet').html('Bet $25').click(function(){
 				$('.bet').remove();
 				$currentBet = 25;
 				$('<article>').appendTo('#betting').html('<h2>Current Bet: $25</h2>').attr({id: 'currentBet', class: 'currentBet'});
+				$playerBank = ($playerBank - $currentBet);
+				$('#bank').html('<h3>Player Bank: $ ' + $playerBank + '</h3>');
 				hitOrStand();
 			});
 			var $bet50 = $('<button/>').appendTo('#betting').addClass('bet').html('Bet $50').click(function(){
 				$('.bet').remove();
 				$currentBet = 50;
 				$('<article>').appendTo('#betting').html('<h2>Current Bet: $50</h2>').attr({id: 'currentBet', class: 'currentBet'});
+				$playerBank = ($playerBank - $currentBet);
+				$('#bank').html('<h3>Player Bank: $ ' + $playerBank + '</h3>');
 				hitOrStand();
 			});
 			var $betAll = $('<button/>').appendTo('#betting').addClass('bet').html('Bet All').click(function(){
 				$('.bet').remove();
 				$currentBet = $playerBank;
 				$('<article>').appendTo('#betting').html('<h2>Current Bet: $ ' + $playerBank + '</h2>').attr({id: 'currentBet', class: 'currentBet'});
+				$playerBank = ($playerBank - $currentBet);
+				$('#bank').html('<h3>Player Bank: $ ' + $playerBank + '</h3>');
 				hitOrStand();
 			});
-			$playerBank = ($playerBank - $currentBet);
-			$('#bank').html('<h3>Player Bank: $ ' + $playerBank + '</h3>');
 		}
 		setBet();
 
