@@ -349,7 +349,7 @@ $(window).load(function() {
 			// TIE ( I DON'T KNOW WHY IT NEEDED ALL THIS JAZZ)
 			if ((dealersValue === playersValue)||(playersValue === dealersValue)){
 				$('<h2>Tie</h2>').appendTo('#statusSection');
-				$playerBank = $playerBank + $currentBet;
+				$playerBank = ($playerBank + $currentBet);
 				$('#currentBet').html('<h2>Bet returned to bank</h2>');
 				$currentBet = 0;
 			}
@@ -357,7 +357,7 @@ $(window).load(function() {
 			// DEALER BUSTS
 			else if (dealersValue > 21 && dealerAces === 0) {
 				$('<h2>Dealer Busts</h2>').appendTo('#statusSection');
-				$playerBank = $playerBank + ($currentBet * 2);
+				$playerBank = ($playerBank + ($currentBet * 2));
 				console.log($currentBet);
 				$('#currentBet').html('<h2>Player won: $ ' + $currentBet + '</h2>');
 				$currentBet = 0;
@@ -373,7 +373,7 @@ $(window).load(function() {
 			// BLACKJACK!
 			else if ((dealersValue != 21) && (playersValue === 21)){
 				$('<h2>Blackjack!</h2>').appendTo('#statusSection');
-				$playerBank = $playerBank + ($currentBet * 2.5);
+				$playerBank = ($playerBank + ($currentBet * 2.5));
 				$('#currentBet').html('<h2>Player won: $ ' + ($currentBet + ($currentBet / 2)) + '</h2>');
 				$currentBet = 0;
 			}
@@ -389,7 +389,7 @@ $(window).load(function() {
 			// PLAYER WINS
 			else if ((playersValue <= 21) && (dealersValue < playersValue)){
 				$('<h2>Player Wins</h2>').appendTo('#statusSection');
-				$playerBank = $playerBank + ($currentBet * 2);
+				$playerBank = ($playerBank + ($currentBet * 2));
 				console.log($currentBet);
 				$('#currentBet').html('<h2>Player won: $ ' + $currentBet + '</h2>');
 				$currentBet = 0;
