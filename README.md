@@ -1,2 +1,2 @@
 # joshuabrainjaffe.github.io
-First WDI projet, my playable Blackjack game
+First WDI project, my playable Blackjack game
